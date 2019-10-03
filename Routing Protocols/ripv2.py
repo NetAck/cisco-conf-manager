@@ -47,7 +47,7 @@ def main():
 
 
 """
-Function to genarate network commands for routing protocols
+Function to generate network commands for routing protocols
 """
 
 
