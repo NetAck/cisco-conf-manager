@@ -4,7 +4,7 @@ import ipaddress
 
 
 class Static_ipv4:
-    def __init__(self, interface, ip, mask = "0", description = "",  shutdown = True):
+    def __init__(self, interface, ip, mask = "0", description = "",  shutdown = False):
         self.interface = interface
         self.description = check_description(description)
         self.ip_address = ipaddress.ip_address(ip)
@@ -51,8 +51,8 @@ def main():
     required.add_argument('-i', '--interface', action='store', type=str, help='specify the default router', required=True)
     required.add_argument('-n', '--netIp', action='store', type=str, help='specify network ip', required=True)
     required.add_argument('-m', '--mask', action='store', type=str, help='network mask', required=True)
-    required.add_argument('-s', '--shutdown', type=bool, action='store', help='specify if the interface is shutted down or not', required=False)
-    required.add_argument('-d', '--description', type=str, action='store', help='specify lease time', required=False)
+    required.add_argument('-s', '--shutdown', type=True, action='store', help='specify if the interface is shutted down or not', required=False)
+    required.add_argument('-d', '--description', type=str, action='store', help='specify descripion', required=False)
     required.add_argument('-f', '--file', type=str, action='store', help='specify the file to generate/append', required=True)
     args = parser.parse_args()
 
