@@ -24,7 +24,7 @@ exit\
     """
     return s
 
-def append_to_file(self, filename = "interface-config.txt"):
+def append_to_file(self, filename = "static-nat-config.txt"):
     file = open(filename, "a")
     success = file.write(generate_command(self))
     file.close
@@ -34,7 +34,7 @@ def append_to_file(self, filename = "interface-config.txt"):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.usage = 'Usage: python3 router.py ' + '-i <inside interface> -l <local ip address> -g <global ip address> -o <outside interface> [-f <file to output>]'
+    parser.usage = 'Usage: python3 router.py ' + '-i <inside interface> -l <local ip address> -g <global ip address> -o <outside interface> -f <file to output>'
     required = parser.add_argument_group('required arguments')
     required.add_argument('-i', '--inside', action='store', type=str, help='specify the inside interface', required=True)
     required.add_argument('-l', '--local_ip', action='store', type=str, help='specify local ip address', required=True)
