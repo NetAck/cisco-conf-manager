@@ -23,7 +23,7 @@ class Ripv2:
 
 
 def main():
-    parser = argparse.ArgumentParser();
+    parser = argparse.ArgumentParser()
     parser.usage = "ripv2 -s -n <[net1, net2, ...]> -p <[g0/1, g0/2, ...]>"
     required = parser.add_argument_group('required arguments')
     parser.add_argument('-s', '--summarization', action='store_true', help='If presents activate the summarization',
